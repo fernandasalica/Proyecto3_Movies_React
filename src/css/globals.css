@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container-hero img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.movie-title {
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.width-col {
+  display: grid;
+  grid-template-columns: 320px 300px 500px;
+}
+
+.image-movie {
+  width: 150px;
+  height: 150px;
+}
+
+.fondo-recovery {
+  margin: 0;
+  padding-top: 10%;
+  padding-bottom: 15%;
+  background-image: url(../img/fondo.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.title-pass {
+  color: black;
+}
+
+.containerError {
+  background-color: #fbfffe;
+  border-color: #fbfffe;
+  margin: 40px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-size: auto auto;
+  padding-bottom: 40px;
+}
+
+.titleError {
+  color: #96031a;
+  font-weight: 550;
+}
+
+.img-error img {
+  width: 50%;
+}
+
+.page-crud {
+  background-color: #fbfffe;
+}
+
+.crud {
+  margin-top: 5%;
+}
+
+.crud-table {
+  margin-bottom: 5%;
+}
+
+.movie-detail {
+  width: auto;
+}
+
+@media (max-width: 720px) {
+  .width-col {
+    display: block;
+  }
+}
+
+.navv {
+  margin-top: 65px;
+  background-color: blanchedalmond;
+}
+
+.foot {
+  text-decoration: none;
+  color: black;
+}
+.foot:hover {
+  transition: 2s;
+  color: white;
+  cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fondito {
+  background-image: url(https://www.shutterstock.com/image-illustration/smartphone-blank-screen-popcorn-film-260nw-2005239014.jpg);
+  background-repeat: no-repeat;
+  width: 430px;
+  height: 260px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px, 25px, 25px, 23px;
+}
+
+.contenido {
+  border-radius: 10px;
+  position: relative;
+}
+
+.btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.btn-cards {
+  background-color: #faa916;
+  text-decoration: none;
+  border: 0;
+}
+
+.cardsprincipales {
+  border-radius: ;
+}
+
+.cardsprincipales:hover {
+  box-shadow: 0px 10px 10px 0px black;
+}
+
+.btn-cards:hover {
+  background-color: blanchedalmond;
+  transition: 2s;
+  text-decoration: none;
+}
+
+.btn-nav {
+  background-color: #faa916;
+  text-decoration: none;
+  border: 0;
+}
+
+.btn-nav:hover {
+  color: white;
+  background-color: blanchedalmond;
+  transition: 2s;
+  text-decoration: none;
+}

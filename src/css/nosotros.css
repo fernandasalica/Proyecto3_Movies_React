@@ -1,0 +1,52 @@
+/* Cambiar tipo de letra solo en main */
+h2 {
+  color: black;
+}
+
+.img-top {
+  width: 100% !important;
+  height: 25rem !important;
+}
+
+/*main*/
+
+.transform-img:hover {
+  transform: scale(1.03);
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.contenedor {
+  /* background-color: aquamarine; */
+  width: 200px;
+  /* height: auto; */
+  position: relative;
+}
+.contenedor img {
+  position: absolute;
+  margin-top: -35%;
+  top: 100px;
+  width: 100px;
+  border-radius: 100%;
+}
+
+.detalle {
+  background-color: #faa916;
+  width: 200px;
+  height: auto;
+  /* position: absolute; */
+  /* top: 100px; */
+  /* z-index: 16; */
+  border-radius: 0 0 35px 35px;
+  padding: 150px 10px 10px 15px;
+}
+
+/* anterior nosotros */
+.Acercadenosotros {
+  margin-top: 20px;
+  padding: 0px 50px;
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
