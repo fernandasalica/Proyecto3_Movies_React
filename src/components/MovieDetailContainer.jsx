@@ -6,9 +6,10 @@ const MovieDetailContainer = () => {
   const params = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(
-      `https://backend-proyecto3-cpzv4av54-admanser.vercel.app/viewmovie/${params.id}`
-    )
+    // fetch(
+    //   `https://backend-proyecto3-cpzv4av54-admanser.vercel.app/viewmovie/${params.id}`
+    // )
+    fetch(`http://localhost:3001/movies/viewmovie/${params.id}`)
       .then((res) => res.json())
       .then((json) => setData(json));
   }, []);
