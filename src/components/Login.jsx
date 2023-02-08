@@ -18,26 +18,30 @@ const Login = ({ show, handleClose, handleShowSignUp, login }) => {
   };
 
   const onSubmit = async (values, actions) => {
-    const rs = await fetch('https://backend-proyecto3-cpzv4av54-admanser.vercel.app/users/login', {
-      method: 'POST',
+    // const rs = await fetch("http://localhost:3001/user/login", {
+    fetch("http://localhost:3001/user/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: values.name,
-        password: values.password
-      })
-    });
-    const response = await rs.json();
-    if (response.error) {
-      toast.error(response.message);
-    } else {
-      login(response.token);
-      toast.success(response.message);
-      actions.resetForm();
-      handleClose();
-      navigate('/');
-    }
+        password: values.password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        localStorage.setItem("token", JSON.stringify(res.token));
+        if (res.errors) {
+          toast.success("Error al iniciar sesión. Inténtelo de nuevo.");
+          handleClose();
+          localStorage.setItem("token", "");
+        } else {
+          toast.success("Bienvenido!");
+          handleClose();
+          navigate("/");
+        }
+      });
   };
 
   return (
@@ -77,7 +81,10 @@ const Login = ({ show, handleClose, handleShowSignUp, login }) => {
                   <br />
                   <Form.Text>
                     Todavia no tienes cuenta?
-                    <a href={require("./Suscribite")} onClick={handleToggleModal}>
+                    <a
+                      href={require("./Suscribite")}
+                      onClick={handleToggleModal}
+                    >
                       Registrate!
                     </a>
                   </Form.Text>

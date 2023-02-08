@@ -7,19 +7,37 @@ import CustomInput from "./CustomInput";
 import CustomPass from "./CustomPass";
 
 const onSubmit = async (values, actions) => {
-  const rs = await fetch('https://backend-proyecto3-cpzv4av54-admanser.vercel.app/users/register', {
-    method: 'POST',
+  // const rs = await fetch('https://backend-proyecto3-cpzv4av54-admanser.vercel.app/users/register', {
+  // const rs = await fetch("http://localhost:3001/user/register", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     name: values.name,
+  //     mail: values.mail,
+  //     password: values.password,
+  //   }),
+  // });
+  // const response = await rs.json();
+  // console.log("response", response);
+  // actions.resetForm();
+
+  fetch("http://localhost:3001/user/register", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-type": "application/json",
     },
     body: JSON.stringify({
       name: values.name,
       mail: values.mail,
-      password: values.password
-    })
-  });
-  const response = await rs.json();
-  console.log('response', response)
+      password: values.password,
+    }),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log("res", res);
+    });
   actions.resetForm();
 };
 
@@ -72,7 +90,7 @@ const SignUp = ({ show, handleClose }) => {
                 <Button
                   variant="secondary"
                   onClick={() => handleClose(resetForm())}
-                  >
+                >
                   Cerrar
                 </Button>
                 <Button type="submit" variant="primary" disabled={isSubmitting}>

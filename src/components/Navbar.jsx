@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { Navbar, Container, Nav /*, Form*/, Button, Stack } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Nav /*, Form*/,
+  Button,
+  Stack,
+} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import { toast } from "react-toastify";
 import Logo from "../img/Logo.png";
 
-const Navbar1 = ({
-  currentUser,
-  login,
-  logout,
-  loggedIn,
-  loggedAdmin,
-}) => {
+const Navbar1 = ({ currentUser, login, logout, loggedIn, loggedAdmin }) => {
   const [showLogin, setShowLogin] = useState(false);
   const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => setShowLogin(true);
@@ -36,7 +36,7 @@ const Navbar1 = ({
       >
         <Container className="col-12 col-md-12">
           <NavLink className="me-3" to="/">
-            <img  src={Logo} alt="logo.png" width={50} />
+            <img src={Logo} alt="logo.png" width={50} />
           </NavLink>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -57,16 +57,25 @@ const Navbar1 = ({
               ) : null}
             </Nav>
             {loggedIn() ? (
-              <Button className="mt-1 me-2 btn-nav text-dark" onClick={handleLogout}>
+              <Button
+                className="mt-1 me-2 btn-nav text-dark"
+                onClick={handleLogout}
+              >
                 <span className="me-2">({currentUser().name})</span>
                 Cerrar sesión
               </Button>
             ) : (
               <>
-                <Button className="mt-1  btn-nav text-dark" onClick={handleShowSignUp}>
+                <Button
+                  className="mt-1  btn-nav text-dark"
+                  onClick={handleShowSignUp}
+                >
                   Registrarse
                 </Button>
-                <Button className="mt-1  btn-nav text-dark" onClick={handleShowLogin}>
+                <Button
+                  className="mt-1  btn-nav text-dark"
+                  onClick={handleShowLogin}
+                >
                   Iniciar sesión
                 </Button>
               </>
