@@ -39,7 +39,7 @@ const Login = ({ show, handleClose, handleShowSignUp, login }) => {
         } else {
           toast.success("Bienvenido!");
           handleClose();
-          navigate("/");
+          navigate("/CrudMovies");
         }
       });
   };

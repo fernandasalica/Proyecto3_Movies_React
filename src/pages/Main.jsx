@@ -21,9 +21,9 @@ const Main = ({
   login,
   logout,
   loggedIn,
-  loggedAdmin
+  loggedAdmin,
 }) => {
-  const [searchMovies, setSearchMovies] = useState('');
+  const [searchMovies, setSearchMovies] = useState("");
 
   return (
     <>
@@ -38,7 +38,7 @@ const Main = ({
       <Navbar2 searchMovies={searchMovies} setSearchMovies={setSearchMovies} />
       <div className="mt-0 d-flex flex-column min-vh-100">
         <Routes>
-          <Route path="/" element={<Landing searchMovies={searchMovies} />}  />
+          <Route path="/" element={<Landing searchMovies={searchMovies} />} />
           <Route path="/recoveryPass" element={<RecoveryPass />} />;
           <Route
             path="/Favorites"
@@ -51,9 +51,11 @@ const Main = ({
             }
           />{" "}
           ;
-          <Route
+          {/* <Route
             path="CrudMovies"
-            element={loggedAdmin() ? <CrudMovies /> : <NotFound />}/>
+            element={loggedAdmin() ? <CrudMovies /> : <NotFound />}
+          /> */}
+          <Route path="CrudMovies" element={<CrudMovies />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route

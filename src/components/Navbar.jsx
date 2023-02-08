@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Navbar,
   Container,
@@ -13,6 +14,7 @@ import { toast } from "react-toastify";
 import Logo from "../img/Logo.png";
 
 const Navbar1 = ({ currentUser, login, logout, loggedIn, loggedAdmin }) => {
+  const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => setShowLogin(true);
@@ -24,6 +26,7 @@ const Navbar1 = ({ currentUser, login, logout, loggedIn, loggedAdmin }) => {
   const handleLogout = () => {
     logout();
     toast("Hasta pronto");
+    navigate("/");
   };
 
   return (

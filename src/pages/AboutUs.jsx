@@ -27,7 +27,7 @@ const AboutUs = () => {
                   </h3>
                   <p>
                     Nuestra especialista en backend. <br />
-                    EApasionada por aprender y dar lo mejor de si siempre.
+                    Apasionada por aprender y dar lo mejor de si siempre.
                   </p>
                 </div>
               </div>
